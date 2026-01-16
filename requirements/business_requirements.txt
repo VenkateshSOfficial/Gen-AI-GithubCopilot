@@ -1,45 +1,23 @@
-Problem Statement
-The acquirers in UAE prefer to have mass enablement of their merchant portfolio on the new Jaywan merchant acquirer link as it saves them the effort to do merchant enablement on the new acquirer link one by one.
+1. User Story
+As a customer, I want to disable address auto-suggestions during checkout, so I can enter my address without interruption.
 
-Benefit hypothesis
-The purpose of this feature is to build automated mass enablement scripts so that the regional team can help MSOs enable their merchant portfolio on the new Jaywan acquirer.
+2. Description:
+During the checkout process, customers may prefer to manually enter their full address without interruptions by auto-suggestions. This user story allows customers to disable the address auto-suggestion feature, providing a more streamlined experience for those who prefer manual entry. This is particularly useful for customers with unusual addresses or those who find auto-suggestions distracting.
 
-Procedure
-In an excel sheet we have the below listed columns
-1 : MSO_ID
-2 : MERCHANT_ID
-3 : ACQUIRER_ID
-4 : BANK_MERCHANT_ID
-5 : TERMINAL_ID
-
-So we have to provide the above details in the sheet and execute a script which automatically creates Jawan acquirer link and also fills the below fields
-1 : Acquirer link ID
-2 : Acquirer link status
-3 : Line of business
-4 : Bank merchant ID
-5 : Bank industry code
-6 ; Goods description
-7 : Partner solution ID
-8 : MC send partner ID
-9 : PSD2 exceptions
-    MC send partner ID
-    May submit PSD2 exemptions low risk
-    May submit PSD2 exemptions SCA delegation
-    May submit PSD2 exemptions secure corporate payments
-    May submit PSD2 exemptions auth outage
-10: Merchant Transaction Setup
-    Default Transaction Source
-    Allowable transaction sources
-    Default transaction frequency
-    Allowable transaction frequencies
-    Payment Types
-    Currency
-    Card Types
-    Exclusion rules
-11: Terminal setup
-    Terminal ID
-12: Custom processing rules
-
-Scope of testing (Acceptance criteria)
-So as a QA tester i will provide the 5 details of the columns mentioned above in the excel sheet and execute the mass enablement script and verify if the jaywan acquirer link is created successfully with all the fields populated as per the requirements.
-E2E transaction execution along with the above listed fields.
+3. Technical Notes
+User Interface: The option to disable suggestions should be a clearly labeled toggle switch (e.g., "Enable Auto-Suggestions") near the address input fields. The default state should be enabled.
+4. Persistence:
+For logged-in users, the preference (enabled/disabled) should be saved to their account profile and persist across sessions and devices.
+For guest users, the preference should be stored in session storage and persist only for the duration of the current checkout session. If the session expires, the preference should reset to the default (enabled).
+Address Validation: Address validation (e.g., checking for valid postal codes, city/state combinations) should always occur, regardless of whether auto-suggestions are enabled or disabled. This is a separate feature.
+Accessibility: The toggle switch must be fully accessible via keyboard navigation and screen readers, adhering to WCAG guidelines. Appropriate ARIA attributes should be used.
+Performance: Disabling/enabling suggestions should not introduce any noticeable performance lag.
+Logging: Log events related to enabling or disabling the feature, and the source of the address (manual entry vs. suggestion selection) for analytics and debugging.
+API: If address suggestions are provided by a third-party API, ensure the ability to bypass or suppress the API calls when suggestions are disabled.
+5. Acceptance Criteria (ACs):
+Scenario 1 describes the main flow, when user wants to disable auto-suggestions.
+Scenario 2 describes the flow, when user wants to enable auto-suggestions.
+Scenario 3 describes the flow for logged in users.
+Scenario 4 describes the flow for guest users.
+Scenario 5 describes the accessibility.
+Scenario 6 describes the address validation.

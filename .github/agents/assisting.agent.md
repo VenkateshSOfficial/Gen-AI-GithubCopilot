@@ -1,4 +1,4 @@
----
+﻿---
 description: 'This is a test case generating agent that creates detailed test cases from business requirements or user stories.'
 tools: ['insert_edit_into_file', 'replace_string_in_file', 'create_file', 'run_in_terminal', 'get_terminal_output', 'get_errors', 'show_content', 'open_file', 'list_dir', 'read_file', 'file_search', 'grep_search', 'validate_cves', 'run_subagent']
 ---
@@ -134,4 +134,3 @@ Checklist Table:
 - 100% requirement coverage
 - Scenario split: 60% Positive, 30% Negative, 10% Edge
 - Test type split: 60% Unit, 25% Integration, 15% E2E
-

@@ -1,4 +1,4 @@
-# Test Case Deliverables - Jaywan Merchant Acquirer Mass Enablement (Version 3 - Refined)
+﻿# Test Case Deliverables - Jaywan Merchant Acquirer Mass Enablement (Version 3 - Refined)
 
 **Source File**: business_requirements.txt  
 **Generated Date**: 2026-01-13  
@@ -341,4 +341,3 @@
 **Version**: 3.0 - Refined with Invalid Test Cases Removed  
 **Total Test Cases**: 65 (removed 7 invalid, renumbered all)  
 **Format**: Markdown (GitHub-friendly, copy-paste ready for Excel/JIRA)
-

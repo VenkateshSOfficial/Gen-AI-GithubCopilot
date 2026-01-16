@@ -1,4 +1,4 @@
-# Test Case Deliverables - Address Auto-Suggestions Toggle Feature
+﻿# Test Case Deliverables - Address Auto-Suggestions Toggle Feature
 
 **Source File**: business_requirements.txt  
 **Generated Date**: 2026-01-09  
@@ -293,4 +293,3 @@
 **Generation Date**: 2026-01-09  
 **Source Requirements**: business_requirements.txt  
 **Total Pages**: 10 sections with 58 test cases
-

@@ -1,4 +1,4 @@
-# ⚡ QUICK REFERENCE CARD - TEST CASE FORMAT
+﻿# ⚡ QUICK REFERENCE CARD - TEST CASE FORMAT
 ## For Instant Lookup When Generating Files
 
 ---
@@ -251,4 +251,3 @@ After every major section, add:
 
 **Last Updated**: January 8, 2026  
 **Status**: ✅ LOCKED - Follow exactly as written
-

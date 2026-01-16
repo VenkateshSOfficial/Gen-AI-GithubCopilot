@@ -1,4 +1,4 @@
-# Test Case Deliverables - Jaywan Merchant Acquirer Mass Enablement
+﻿# Test Case Deliverables - Jaywan Merchant Acquirer Mass Enablement
 
 **Source File**: business_requirements.txt  
 **Generated Date**: 2026-01-13  
@@ -324,4 +324,3 @@
 **Source Requirements**: business_requirements.txt (Jaywan Merchant Acquirer Mass Enablement)  
 **Total Deliverables**: 10 sections with 65 test cases  
 **Format**: Markdown (GitHub-friendly, copy-paste ready for Excel/JIRA)
-

@@ -1,4 +1,4 @@
----
+﻿---
 description: 'This custom agent generates comprehensive test cases based on given requirements or user stories, following best practices and testing techniques.'
 tools: ['insert_edit_into_file', 'replace_string_in_file', 'create_file', 'run_in_terminal', 'get_terminal_output', 'get_errors', 'show_content', 'open_file', 'list_dir', 'read_file', 'file_search', 'grep_search', 'validate_cves', 'run_subagent']
 ---

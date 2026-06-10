@@ -527,6 +527,67 @@ Use this template as your baseline when generating files:
 
 ---
 
+## 🔐 JIRA SETTINGS DISCOVERY PROTOCOL (NEW - Added June 10, 2026)
+
+**Purpose:**
+Prevent false "credentials missing" failures when Jira access is already configured in VS Code settings.
+
+---
+
+### Protocol 1: Settings Lookup Order
+
+**Rules:**
+- ✅ Always check workspace settings at `.vscode/settings.json` before checking user settings
+- ✅ If workspace settings contain valid Jira credentials, use them as the primary source
+- ✅ Only check user settings if workspace settings are missing one or more required Jira values
+- ✅ Do not skip workspace settings when the current task is tied to the open repository
+
+---
+
+### Protocol 2: Accepted Jira Key Names
+
+**Rules:**
+- ✅ Accept dot-notation keys: `atlassian.mcp.jiraUrl`, `atlassian.mcp.username`, `atlassian.mcp.apiToken`
+- ✅ Accept camelCase keys: `atlassianMcp.jiraUrl`, `atlassianMcp.username`, `atlassianMcp.apiToken`
+- ✅ Treat either namespace as valid if all required values are present
+- ✅ Do not assume only one naming convention is allowed across environments
+
+**Required values for direct Jira access:**
+- ✅ Jira base URL
+- ✅ Username or account email
+- ✅ API token
+
+---
+
+### Protocol 3: Direct Jira Access Priority
+
+**Rules:**
+- ✅ If Jira URL, username, and API token are present in either accepted namespace, use direct Jira REST access immediately
+- ✅ Do not attempt the local MCP bridge first when direct credentials are already available
+- ✅ Use the Jira issue key provided by the user as the source-of-truth lookup target
+- ✅ Record which settings source was used: workspace settings or user settings
+
+---
+
+### Protocol 4: MCP Bridge Fallback Rules
+
+**Rules:**
+- ✅ Use the MCP bridge only if direct Jira credentials are not available in workspace or user settings
+- ✅ If direct credentials exist but the bridge is offline, continue with direct Jira REST access
+- ✅ Do not report Jira connectivity failure until both direct credential lookup paths have been checked
+- ✅ Do not claim credentials are missing unless both supported key namespaces have been checked
+
+---
+
+### Protocol 5: Absolute Prohibitions
+
+❌ **NEVER** check only user settings and stop there  
+❌ **NEVER** assume `atlassianMcp.*` is the only valid key namespace  
+❌ **NEVER** fall back to MCP bridge before checking direct credentials in workspace settings  
+❌ **NEVER** report "credentials missing" without checking both supported namespaces  
+
+---
+
 ## 🎯 FINAL CHECKLIST BEFORE FILE CREATION
 
 Before creating `test_case_deliverables.md`, verify:

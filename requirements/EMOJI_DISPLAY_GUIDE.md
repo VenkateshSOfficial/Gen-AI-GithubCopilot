@@ -24,14 +24,14 @@ We've made **3 critical changes** to ensure your test case documents display wit
 
 ### **Step 1: Pull Latest Changes**
 ```bash
-cd C:\Your\Path\Learn-gen-AI
+cd C:\Users\venkatesh_swaminatha\Desktop\learning\Gen-AI-GithubCopilot
 git pull origin master
 ```
 
 ### **Step 2: Verify Files Are UTF-8**
 ```powershell
 # PowerShell - Check file encoding
-file jaywan_test_cases_v3.md
+file requirements/test_case_deliverables.md
 # Should show: UTF-8 Unicode text
 ```
 
@@ -49,7 +49,7 @@ git reset --hard HEAD
 ```
 
 ### **Step 5: Verify Display**
-- Open `requirements/jaywan_test_cases_v3.md` in any markdown viewer
+- Open `requirements/test_case_deliverables.md` in any markdown viewer
 - All emojis should display correctly:
   - ✅ (green checkmark)
   - ❌ (red X)
@@ -67,12 +67,12 @@ git reset --hard HEAD
 
 ### **Clone & Configure**
 - [ ] Clone repository: `git clone <repo-url>`
-- [ ] Navigate to repo: `cd Learn-gen-AI`
+- [ ] Navigate to repo: `cd Gen-AI-GithubCopilot`
 - [ ] Pull latest: `git pull origin master`
 - [ ] Configure Git encoding settings (see Step 3 above)
 
 ### **Verification**
-- [ ] Open `requirements/jaywan_test_cases_v3.md`
+- [ ] Open `requirements/test_case_deliverables.md`
 - [ ] Check that emojis appear correctly in markdown viewer
 - [ ] Test in GitHub web interface (should be perfect)
 - [ ] Test in VS Code (enable markdown preview)
@@ -85,7 +85,7 @@ git reset --hard HEAD
 ### **If Emojis Still Show as ❓ or Boxes:**
 
 #### **Solution A: Fix Encoding in VS Code**
-1. Open file `jaywan_test_cases_v3.md`
+1. Open file `requirements/test_case_deliverables.md`
 2. Bottom right → Click encoding (likely shows "UTF-8" or "CRLF")
 3. Select **UTF-8** explicitly
 4. File should reload with proper encoding
@@ -94,7 +94,7 @@ git reset --hard HEAD
 #### **Solution B: Force UTF-8 in PowerShell**
 ```powershell
 # Open PowerShell and run:
-$file = "requirements/jaywan_test_cases_v3.md"
+$file = "requirements/test_case_deliverables.md"
 $content = Get-Content $file -Encoding UTF8
 [System.IO.File]::WriteAllText($file, ($content -join "`n"), [System.Text.Encoding]::UTF8)
 Write-Host "Fixed: $file"
@@ -155,13 +155,13 @@ Test opening file in:
 
 ### **One-Line Fix All**
 ```powershell
-cd "C:\path\to\Learn-gen-AI"; git pull origin master; git config core.safecrlf false; git config core.autocrlf input; git rm --cached -r .; git reset --hard HEAD
+cd "C:\Users\venkatesh_swaminatha\Desktop\learning\Gen-AI-GithubCopilot"; git pull origin master; git config core.safecrlf false; git config core.autocrlf input; git rm --cached -r .; git reset --hard HEAD
 ```
 
 ### **Verify Encoding**
 ```powershell
 # Check file is UTF-8
-$file = "requirements/jaywan_test_cases_v3.md"
+$file = "requirements/test_case_deliverables.md"
 $bytes = [System.IO.File]::ReadAllBytes($file) | Select-Object -First 3
 Write-Host "First 3 bytes: $bytes"
 # Should NOT start with: EF BB BF (UTF-8 BOM)

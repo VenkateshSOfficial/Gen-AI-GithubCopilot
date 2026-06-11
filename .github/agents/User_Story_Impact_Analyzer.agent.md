@@ -136,7 +136,7 @@ Match user story requirements with existing test cases to verify test coverage. 
 - **Atlassian MCP Tool** - Extended: `mcp_mcp-atlassian_jira_get_issue` comments field for additional context
   ✅ Use to fetch acceptance criteria from issue comments if not in description
 - **Existing Test Cases** - From workspace filesystem
-  ✅ Automatically discovered from requirements/test_case_deliverables.md
+  ✅ Automatically discovered from test_cases/test_case_deliverables.md
 - **Feature Registry** - From documentation/specifications
 
 ### Output Formats

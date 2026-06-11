@@ -87,7 +87,7 @@ Universal Output Rules:
 5. ALWAYS show ALL test cases in the main table — never truncate or summarize
 6. ALWAYS auto-discover requirements first — never ask the user before searching
 7. ALWAYS generate 40-60 test cases per major requirement — never fewer
-8. ALWAYS create test_case_deliverables.md in requirements/ after generation
+8. ALWAYS create test_case_deliverables.md in test_cases/ after generation
 9. NEVER add opinions, suggestions, or commentary outside the defined deliverables
 10. NEVER deviate from the Given-When-Then format for test steps
 
@@ -169,7 +169,7 @@ Input Processing:
 - **Atlassian MCP Tool** - Extended: `mcp_mcp-atlassian_jira_get_issue_comments` for additional context
   ✅ Use to fetch acceptance criteria from issue comments if not in description
 - **Existing Test Cases** - From workspace filesystem
-  ✅ Automatically discovered from requirements/test_case_deliverables.md
+  ✅ Automatically discovered from test_cases/test_case_deliverables.md
 - **Feature Registry** - From documentation/specifications
 
 ### Jira Retrieval Execution Rules
@@ -906,7 +906,7 @@ Supporting Documents:
 
 ## AUTOMATIC MARKDOWN OUTPUT FILE CREATION (MANDATORY)
 -----------------------------------------------------------------------
-- After generating all test case deliverables, the agent MUST automatically create a Markdown (.md) file in the requirements/ folder.
+- After generating all test case deliverables, the agent MUST automatically create a Markdown (.md) file in the test_cases/ folder.
 - The file must contain the full output package, including:
     1. Test Case Summary Report
     2. Test Case Distribution Table (Testing Pyramid)
